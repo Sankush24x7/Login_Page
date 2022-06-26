@@ -1,0 +1,118 @@
+<html>
+<head>
+<title> Login page </title>
+<style>
+body
+{
+background-color:33FFF9;
+}
+
+#Login_Div
+{
+border: 2px solid black;
+border-radius:50px;
+padding: 30px;
+margin:100px 300px;
+background-color:white;
+}
+#submit
+{
+background-color: BEFF33;
+border:none;
+border-radius : 5px;
+font-weight:bold;
+cursor:pointer;
+}
+#reset
+{
+background-color: light grey;
+border:none;
+border-radius : 5px;
+font-weight:bold;
+cursor:pointer;
+}
+#SignUp
+{
+background-color: 33AFFF;
+border:none;
+border-radius : 5px;
+font-weight:bold;
+cursor:pointer;
+}
+label
+{
+font-weight:bold;
+}
+#fpwd
+{
+cursor:pointer;
+color: blue;
+}
+</style>
+<script>
+function fnsubmit()
+{
+var username = document.getElementById('UserName').value;
+var Password = document.getElementById('Password').value;
+
+if( username == "Admin" && Password == "xxxx")
+{
+alert("Hello "+username + " WelCome To New World!");
+}
+else
+{
+if(username == "")
+{
+alert("UserName is not Empty!");
+}
+else if(Password == "")
+{
+alert("Password is not Empty!");
+}
+else
+{
+alert("Invalid Credential..!");
+alert("UserName as Admin && Password as xxxx");
+}
+
+}
+}
+
+function fnreset()
+{
+document.getElementById('UserName').value = "";
+document.getElementById('Password').value = "";
+}
+
+function fnForgotPwd()
+{
+document.getElementById('pwdblock').innerHTML = "xxxx";
+}
+</script>
+</head>
+<body>
+<div id="Login_Div" >
+<center>
+<h1>Login Page</h1>
+<div id="UserId">
+<label>UserName : </label>
+<input type="Text" name="UserName" id="UserName" PlaceHolder="UserName">
+</div><br>
+<div id="PWD">
+&nbsp;<label>Password : </label>
+<input type="Password" name="Password" id="Password" PlaceHolder="Password">
+</div></br>
+<div id="Buttons">
+<input type="submit" id="submit" value="Submit" onclick="fnsubmit()">&nbsp;&nbsp;&nbsp;
+<input type="reset" id="reset" value="Reset"  onclick="fnreset()">&nbsp;&nbsp;&nbsp;
+<input type="button" id="SignUp" value="SignUp">
+</div><br>
+<label id="fpwd" onclick="fnForgotPwd()">Forgot Password </label>
+<div id="fpassword">
+<label>Your Password :- </label>
+<span id="pwdblock"></span>
+</div>
+</center>
+</div>
+</body>
+</html>
